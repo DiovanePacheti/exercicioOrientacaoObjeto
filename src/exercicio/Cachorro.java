@@ -11,11 +11,17 @@ public class Cachorro {
     private int energia = 0;
 
     // CRIANDO O CONSTRUTOR DA CLASSE
-    public Cachorro(String raca, String nome){
+    public Cachorro(){
         this.raca = raca;
         this.nome = nome;
+        this.porte = porte;
+        this.pedigree = pedigree;
+        this.peso = peso;
+        this.dataDeNacimento = dataDeNacimento;
+        this.energia = energia;
     }
 
+    //METODOS ACESSORES GET E SET
     public String getRaca(){ return this.raca;}
     public void setRaca(String raca) {this.raca = raca;}
     public String getNome() { return this.nome;}
@@ -36,7 +42,13 @@ public class Cachorro {
         String s = " ";
         s += "----------------------------------------------\n";
         s += "- Raça : " + getRaca() + "\n";
-        
+        s += "- Nome : " + getNome() + "\n";
+        s += "- Porte : " + getPorte() + "\n";
+        s += "- Data de Nascimento : " + getDataDeNacimento() + "\n";
+        s += "- Energia : " + getEnergia() + "\n";
+        s += "- Peso : " + getRaca() + "\n";
+        s += "- Pedigree : " + getPedigree() + "\n";
+        s += "- --------------------------------------------------\n";
         return s;
     }
 }//fim da class Cachorro
