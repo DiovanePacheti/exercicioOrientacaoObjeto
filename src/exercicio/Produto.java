@@ -1,54 +1,49 @@
 package exercicio;
 
-public class Cachorro {
+public class Produto {
 
     private int codigo = 0;
     private String nome = " ";
     private double valorDeCompra = 0;
-    private String valorDeVenda = " ";
-    private double peso = 0;
-    private int dataDeNacimento = 0;
-    private int energia = 0;
+    private double valorDeVenda = 0;
+    private int qtdEmEstoque = 0;
+    private int estoqueMinimo = 0;
 
     // CRIANDO O CONSTRUTOR DA CLASSE
-    public Cachorro(String raca,String nome,String porte,String pedigree, double peso, int dataDeNacimento, int energia){
-        this.raca = raca;
+    public Produto(int codigo,String nome,double valorDeCompra, double valorDeVenda,int qtdEmEstoque, int estoqueMinimo){
+        this.codigo = codigo;
         this.nome = nome;
-        this.porte = porte;
-        this.pedigree = pedigree;
-        this.peso = peso;
-        this.dataDeNacimento = dataDeNacimento;
-        this.energia = energia;
+        this.valorDeCompra = valorDeCompra;
+        this.valorDeVenda = valorDeVenda;
+        this.qtdEmEstoque = qtdEmEstoque;
+        this.estoqueMinimo = estoqueMinimo;
     }
 
     //METODOS ACESSORES GET E SET
-    public String getRaca(){ return this.raca;}
-    public void setRaca(String raca) {this.raca = raca;}
+    public int getCodigo(){ return this.codigo;}
+    public void setCodigo(int codigo) {this.codigo = codigo;}
     public String getNome() { return this.nome;}
     public void setNome(String nome){this.nome = nome;}
-    public String getPorte(){return this.porte;}
-    public void setPorte(String porte) { this.porte = porte; }
-    public int getDataDeNacimento() { return dataDeNacimento; }
-    public void setDataDeNacimento(int dataDeNacimento){ this.dataDeNacimento = dataDeNacimento;}
-    public int getEnergia() { return energia; }
-    public void setEnergia(int energia) { this.energia = energia; }
-    public double getPeso() { return peso; }
-    public void setPeso(double peso) { this.peso = peso; }
-    public String getPedigree() { return pedigree; }
-    public void setPedigree(String pedigree) { this.pedigree = pedigree; }
+    public double getvalorDeCompra(){return this.valorDeCompra;}
+    public void setValorDeCompra(double valorDeCompra ){ this.valorDeCompra = valorDeCompra; }
+    public double getvalorDeVenda(){return this.valorDeVenda;}
+    public void setValorDeVenda(double valorDeVenda ){ this.valorDeVenda = valorDeVenda; }
+    public int getQtdEmEstoque() { return this.qtdEmEstoque; }
+    public void setQtdEmEstoque(int qtdEmEstoque){ this.qtdEmEstoque = qtdEmEstoque;}
+    public int getEstoqueMinimo() { return this.estoqueMinimo; }
+    public void setEstoqueMinimo(int estoqueMinimo) { this.estoqueMinimo = estoqueMinimo; }
 
     @Override
     public String toString() {
         String s = " ";
         s += "----------------------------------------------\n";
-        s += "- Raça : " + getRaca() + "\n";
+        s += "- Codigo : " + getCodigo() + "\n";
         s += "- Nome : " + getNome() + "\n";
-        s += "- Porte : " + getPorte() + "\n";
-        s += "- Data de Nascimento : " + getDataDeNacimento() + "\n";
-        s += "- Energia : " + getEnergia() + "\n";
-        s += "- Peso : " + getRaca() + "\n";
-        s += "- Pedigree : " + getPedigree() + "\n";
+        s += "- Valor de compra : " + getvalorDeCompra() + "\n";
+        s += "- Valor de venda : " + getvalorDeVenda() + "\n";
+        s += "- Quantidade em estoque : " + getQtdEmEstoque() + "\n";
+        s += "- Estoque minimo : " + getEstoqueMinimo() + "\n";
         s += "- --------------------------------------------------\n";
         return s;
     }
-}//fim da class Cachorro
+}//fim da class produto

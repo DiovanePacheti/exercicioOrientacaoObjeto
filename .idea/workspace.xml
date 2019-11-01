@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="333f83cb-235e-42cc-a454-995663363ffa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/exercicio/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exercicio/Personagem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercicio/Funcionario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercicio/MiniMercado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exercicio/Pessoa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercicio/Cachorro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercicio/Cachorro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercicio/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercicio/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercicio/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercicio/Produto.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
