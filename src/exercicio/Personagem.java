@@ -3,12 +3,13 @@ package exercicio;
 public class Cachorro {
 
     private String raca = " ";
-    private String nome = " ";
-    private String porte = " ";
-    private String pedigree = " ";
-    private double peso = 0;
-    private int dataDeNacimento = 0;
-    private int energia = 0;
+    private String classe = " ";
+    private String nickname = " ";
+    private int stamina = 0;
+    private String mana = " ";
+    private int power_attack = 0;
+    private int intelecto = 0;
+    private int armor = 0;
 
     // CRIANDO O CONSTRUTOR DA CLASSE
     public Cachorro(String raca,String nome,String porte,String pedigree, double peso, int dataDeNacimento, int energia){

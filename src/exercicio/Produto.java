@@ -2,10 +2,10 @@ package exercicio;
 
 public class Cachorro {
 
-    private String raca = " ";
+    private int codigo = 0;
     private String nome = " ";
-    private String porte = " ";
-    private String pedigree = " ";
+    private double valorDeCompra = 0;
+    private String valorDeVenda = " ";
     private double peso = 0;
     private int dataDeNacimento = 0;
     private int energia = 0;
