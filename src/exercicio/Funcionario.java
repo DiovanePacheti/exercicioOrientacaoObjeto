@@ -9,7 +9,7 @@ public class Funcionario extends Pessoa {
     private int credibilidade = 0;
 
     // CRIANDO O CONSTRUTOR DA CLASSE
-    public Funcionario(String raca,String nome,String porte,String pedigree, double peso, int dataDeNacimento, int energia){
+    public Funcionario(double salario,int dataDeAdmissao,String cargo,int energia, int credibilidade){
         super();
         this.salario = salario;
         this.dataDeAdmissao = dataDeAdmissao;

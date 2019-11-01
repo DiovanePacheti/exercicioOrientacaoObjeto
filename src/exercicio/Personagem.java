@@ -1,6 +1,6 @@
 package exercicio;
 
-public class Cachorro {
+public class Personagem {
 
     private String raca = " ";
     private String classe = " ";
@@ -12,7 +12,7 @@ public class Cachorro {
     private int armor = 0;
 
     // CRIANDO O CONSTRUTOR DA CLASSE
-    public Cachorro(String raca,String nome,String porte,String pedigree, double peso, int dataDeNacimento, int energia){
+    public Personagem(String raca,String nome,String porte,String pedigree, double peso, int dataDeNacimento, int energia){
         this.raca = raca;
         this.nome = nome;
         this.porte = porte;
