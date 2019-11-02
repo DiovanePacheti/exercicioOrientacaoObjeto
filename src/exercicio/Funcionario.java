@@ -1,15 +1,18 @@
 package exercicio;
 
+import java.time.LocalDate;
+import java.util.Random;
+
 public class Funcionario extends Pessoa {
 
     private double salario = 0;
-    private int dataDeAdmissao = 0;
+    private LocalDate dataDeAdmissao;
     private String cargo = " ";
     private int energia = 0;
     private int credibilidade = 0;
 
     // CRIANDO O CONSTRUTOR DA CLASSE
-    public Funcionario(double salario,int dataDeAdmissao,String cargo,int energia, int credibilidade){
+    public Funcionario(double salario,LocalDate dataDeAdmissao,String cargo,int energia, int credibilidade){
         super();
         this.salario = salario;
         this.dataDeAdmissao = dataDeAdmissao;
@@ -22,8 +25,8 @@ public class Funcionario extends Pessoa {
     //METODOS ACESSORES GET E SET
     public double getSalario(){ return this.salario;}
     public void setSalario(double salario) {this.salario = salario;}
-    public int getDataDeAnimassao() { return this.dataDeAdmissao;}
-    public void setDataDeAdmissao(int dataDeAdmissao){this.dataDeAdmissao = dataDeAdmissao;}
+    public LocalDate getDataDeAnimassao() { return this.dataDeAdmissao;}
+    public void setDataDeAdmissao(LocalDate dataDeAdmissao){this.dataDeAdmissao = dataDeAdmissao;}
     public String getCargo(){return this.cargo;}
     public void setCargo(String cargo) { this.cargo = cargo; }
     public int getEnergia() { return this.energia; }
@@ -43,7 +46,26 @@ public class Funcionario extends Pessoa {
             System.out.println("Energia Insuficiente");
         }//fim do bloco if/else
     }
-    public void tomarCafe(){}
+
+    public String tomarCafe(){
+        //Energia + credibilidade = ?
+        String infarto = " ";
+        int fatorInfarto;
+        int probabilidade;
+        Random sortearNumero = new Random();
+
+        this.setEnergia(this.getEnergia() + (10*sortearNumero.nextInt(50)));
+        if(this.getEnergia() >= 100) {
+            fatorInfarto = (getEnergia() - 100) * 2;
+            probabilidade = sortearNumero.nextInt(100);
+            if (fatorInfarto >= probabilidade) {
+                return infarto = "suas chances de infato sao altas " + probabilidade + "%";
+            } else {
+                return infarto = "suas chances de infato sao baixas " + probabilidade+ "%";
+            }
+        }
+        return infarto;
+    }//fim do method tomarCafe
     public void fofocar(){}
     public void solicitarAumento(){}
     public void dormir(){}
