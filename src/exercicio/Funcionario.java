@@ -5,6 +5,8 @@ import java.util.Random;
 
 public class Funcionario extends Pessoa {
 
+    Random sortearNumero = new Random();
+
     private double salario = 0;
     private LocalDate dataDeAdmissao;
     private String cargo = " ";
@@ -47,27 +49,28 @@ public class Funcionario extends Pessoa {
         }//fim do bloco if/else
     }
 
-    public String tomarCafe(){
-        //Energia + credibilidade = ?
-        String infarto = " ";
-        int fatorInfarto;
-        int probabilidade;
-        Random sortearNumero = new Random();
-
-        this.setEnergia(this.getEnergia() + (10*sortearNumero.nextInt(50)));
+    public void tomarCafe(){
+        this.setEnergia(this.getEnergia() + sortearNumero.nextInt(16));
         if(this.getEnergia() >= 100) {
-            fatorInfarto = (getEnergia() - 100) * 2;
-            probabilidade = sortearNumero.nextInt(100);
-            if (fatorInfarto >= probabilidade) {
-                return infarto = "suas chances de infato sao altas " + probabilidade + "%";
-            } else {
-                return infarto = "suas chances de infato sao baixas " + probabilidade+ "%";
-            }
-        }
-        return infarto;
+            //Energia carregada
+            this.setEnergia(100);
+        }//fim if
     }//fim do method tomarCafe
+
+
     public void fofocar(){}
-    public void solicitarAumento(){}
+
+    public void solicitarAumento(){
+        int fator = sortearNumero.nextInt(120);
+        if(fator <= this.getCredibilidade()){
+            System.out.println("Parabéns \nSolicitaço aceita!");
+            int aumento = 5+sortearNumero.nextInt(11);
+            double novoSalario = this.getSalario() + (this.getSalario() * (aumento / 100));
+            this.setSalario(novoSalario);
+            System.out.println("Você recebeu aumento de " + aumento +"%");
+        }//fim do if
+    }//fim do method solicitar Aumento
+
     public void dormir(){}
 
     @Override

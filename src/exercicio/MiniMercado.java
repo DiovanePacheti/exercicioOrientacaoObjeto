@@ -3,6 +3,8 @@ package exercicio;
 public class MiniMercado {
 
     private Funcionario[] funcionarios; // criando um array de Funcionario
+    private Produto[] produtos = new Produto[100];//
+    private Cliente[] clientes = new Cliente[100];//
 
     //Construtor da classe
     public MiniMercado(){
@@ -13,11 +15,17 @@ public class MiniMercado {
         //criando um loop pra cadastra contrataçoes
         for(int i=0; i<funcionarios.length;i++){
             if(funcionarios[i] != null){
-                
+
             }
 
         }//fim do for
     }//fim do method contrata funcionarios
+
+    //controlar a entrada de um produto já cadastrado
+
+    //dar baixa em estoque
+
+    //Diminuir o dinheiro do cliente apos a compra
 
 
 
