@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.Scanner;
 import exercicio.Funcionario;
 import exercicio.MiniMercado;
+import exercicio.QuadroDeFuncionariosCheioException;
 
 public class Main {
 
@@ -20,7 +21,7 @@ public class Main {
             Funcionario novoFuncionario = new Funcionario();
             do {
                 System.out.print("Digite o nome do funcionario : ");
-                String nome = scan.nextLine();
+                String nome = scan.next();
                 if(nome.length() > 2 ){
                     novoFuncionario.setNome(nome);
                     validar = true;
@@ -32,8 +33,17 @@ public class Main {
             }while(!validar);
 
             validar = false; //retornando para o estado falso
-            System.out.print("Digite o salario do funcionario : ");
-            novoFuncionario.setSalario(scan.nextDouble());
+            do {
+                System.out.print("Digite o salario do funcionario : ");
+                double salario = scan.nextDouble();
+                if(salario > 0) {
+                    novoFuncionario.setSalario(salario);
+                    validar = true;
+                }else{
+                    System.out.println("valor invalido ");
+                }
+            }while (!validar);
+
             System.out.print("Digite a data de aniversario do funcionario : ");
             String data = scan.next(); //formato esperado da data 00/00/0000
             String[] partes = data.split("/"); //definindo o simbolo separador
@@ -43,7 +53,11 @@ public class Main {
             novoFuncionario.setDataDeNacimento(LocalDate.of(ano,mes,dia));
             System.out.println("Digite o cpf do Funcionario : ");
 
-            mercado.contratarFuncionario(novoFuncionario);
+            try {
+                mercado.contratarFuncionario(novoFuncionario);
+            } catch (QuadroDeFuncionariosCheioException e) {
+                e.printStackTrace();
+            }
             System.out.println("Deseja cadastrar outro funcionario : [S - sim  / N - não]");
             String sair = scan.next();
             System.out.println(novoFuncionario.toString());

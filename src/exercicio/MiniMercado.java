@@ -11,14 +11,19 @@ public class MiniMercado {
         funcionarios = new Funcionario[5]; //inicializando quando for chamada a classe
     }
 
-    public void contratarFuncionario(Funcionario novoFuncionario){
+    public void contratarFuncionario(Funcionario novoFuncionario) throws QuadroDeFuncionariosCheioException {
+        boolean quadroDeFuncionariosCheio = true;
         //criando um loop pra cadastra contrataçoes
         for(int i=0; i<funcionarios.length;i++){
-            if(funcionarios[i] != null){
-
+            if(funcionarios[i] == null){
+                funcionarios[i] = novoFuncionario;
+                quadroDeFuncionariosCheio = false;
+                break;
             }
-
         }//fim do for
+        if(quadroDeFuncionariosCheio){
+            throw new QuadroDeFuncionariosCheioException();
+        }
     }//fim do method contrata funcionarios
 
     //controlar a entrada de um produto já cadastrado

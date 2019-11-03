@@ -7,6 +7,8 @@ public class Funcionario extends Pessoa {
 
     Random sortearNumero = new Random();
 
+    private int contador = 0;
+    private int id;
     private double salario = 0;
     private LocalDate dataDeAdmissao;
     private String cargo = " ";
@@ -22,9 +24,14 @@ public class Funcionario extends Pessoa {
         this.energia = energia;
         this.credibilidade = credibilidade;
     }
-    public Funcionario(){}
+
+    public Funcionario(){
+        contador++;
+        this.id = contador;
+    }
 
     //METODOS ACESSORES GET E SET
+    public int getId(){ return this.id;}
     public double getSalario(){ return this.salario;}
     public void setSalario(double salario) {this.salario = salario;}
     public LocalDate getDataDeAnimassao() { return this.dataDeAdmissao;}
