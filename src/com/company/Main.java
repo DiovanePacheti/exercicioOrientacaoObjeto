@@ -2,56 +2,58 @@ package com.company;
 
 import exercicio.Cachorro;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 import exercicio.Funcionario;
+import exercicio.MiniMercado;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-     /*   Scanner scan = new Scanner(System.in);
-        Cachorro dog = new Cachorro();
-        String nomeCachorro = " ";
 
-        System.out.println("Digite o nome do cachorro : ");
-        nomeCachorro = scan.nextLine();
-        if(nomeCachorro.length()>3){
-            dog.setNome(nomeCachorro);
-        }
+      Scanner scan = new Scanner(System.in);
 
-        System.out.println(dog.toString());
+        MiniMercado mercado = new MiniMercado();
+        boolean validar = false;
+        int cont = 0;//controlando numeros de contrataçoes
+        do {
+            Funcionario novoFuncionario = new Funcionario();
+            do {
+                System.out.print("Digite o nome do funcionario : ");
+                String nome = scan.nextLine();
+                if(nome.length() > 2 ){
+                    novoFuncionario.setNome(nome);
+                    validar = true;
 
-      */
-        int opcao = 0;
-        Scanner scan = new Scanner(System.in);
-        Funcionario[] novoFuncionario = new Funcionario[30];
-        novoFuncionario[0] = new Funcionario();
+                }else {
 
+                    System.out.println("Você não pode cadastra um nome vaziou ou com menos de 2 letras !");
+                }
+            }while(!validar);
 
-/*
-       System.out.print("digite o nome do Funcionario : ");
-       novoFuncionario.setNome(scan.nextLine());
-       novoFuncionario.setCpf(scan.nextLine());
-       String data = scan.nextLine();
-       String[] partes = data.split("/");
-       int dia = Integer.parseInt(partes[0]);
-       int mes = Integer.parseInt(partes[1]);
-       int ano = Integer.parseInt(partes[2]);
-       novoFuncionario.setDataDeNacimento(LocalDate.of(ano,mes,dia));
-*/
-        //do{
-        System.out.println("|-----------OSins--------------|");
-        System.out.println("|1- Trabalhar                  |   ");
-        System.out.println("|2- Tomar Café                 |");
-        opcao = scan.nextInt();
+            validar = false; //retornando para o estado falso
+            System.out.print("Digite o salario do funcionario : ");
+            novoFuncionario.setSalario(scan.nextDouble());
+            System.out.print("Digite a data de aniversario do funcionario : ");
+            String data = scan.next(); //formato esperado da data 00/00/0000
+            String[] partes = data.split("/"); //definindo o simbolo separador
+            int dia = Integer.parseInt(partes[0]);
+            int mes = Integer.parseInt(partes[1]);
+            int ano = Integer.parseInt(partes[2]);
+            novoFuncionario.setDataDeNacimento(LocalDate.of(ano,mes,dia));
+            System.out.println("Digite o cpf do Funcionario : ");
 
-        switch (opcao){
-            case 1:
-                novoFuncionario[0].trabalhar();
-            case 2 :
-                String infarto = novoFuncionario[0].tomarCafe();
+            mercado.contratarFuncionario(novoFuncionario);
+            System.out.println("Deseja cadastrar outro funcionario : [S - sim  / N - não]");
+            String sair = scan.next();
+            System.out.println(novoFuncionario.toString());
+            cont++;
+            if(sair.equalsIgnoreCase("n")){
+                break;
+            }
 
-                System.out.println(infarto);
-        }//fim do switch
+        }while (true);
+
 
     }//fim da metodo main
 }

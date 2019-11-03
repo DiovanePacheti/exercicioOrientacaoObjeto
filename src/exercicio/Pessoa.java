@@ -1,13 +1,15 @@
 package exercicio;
 
+import java.time.LocalDate;
+
 public class Pessoa {
 
     private String nome = " ";
     private String cpf = " ";
-    private int dataDeNacimento = 0;
+    private LocalDate dataDeNacimento;
 
     // CRIANDO O CONSTRUTOR DA CLASSE
-    public Pessoa(String nome, String cpf,int dataDeNacimento) {
+    public Pessoa(String nome, String cpf,LocalDate dataDeNacimento) {
         this.nome = nome;
         this.cpf = cpf;
         this.dataDeNacimento = dataDeNacimento;
@@ -21,8 +23,8 @@ public class Pessoa {
     public void setNome(String nome){this.nome = nome;}
     public String getCpf(){return this.cpf;}
     public void setCpf(String cpf) { this.cpf = cpf; }
-    public int getDataDeNacimento() { return dataDeNacimento; }
-    public void setDataDeNacimento(int dataDeNacimento){ this.dataDeNacimento = dataDeNacimento;}
+    public LocalDate getDataDeNacimento() { return dataDeNacimento; }
+    public void setDataDeNacimento(LocalDate dataDeNacimento){ this.dataDeNacimento = dataDeNacimento;}
 
 
     @Override
